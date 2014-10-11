@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InExchange.InvoiceService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InExchange.InvoiceService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Reply">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reply" nillable="true" type="tns:Reply" />
+  <xs:simpleType name="PartyIdentifierTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IS_KT" />
+      <xs:enumeration value="GLN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PartyIdentifierTypes" nillable="true" type="tns:PartyIdentifierTypes" />
+</xs:schema>

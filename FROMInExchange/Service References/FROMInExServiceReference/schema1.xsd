@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://skhub.transactions/" elementFormDefault="qualified" targetNamespace="http://skhub.transactions/" id="schema1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="Message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ReceiverPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Standard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:TransactionListResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TransactionListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lines" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionUUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTransactionPayload" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SkTransactionPayload">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="received" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="receiverPartyIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="transactionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="senderPartyIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="standard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="payload" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateTransactionStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionUUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ResultMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransactionStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTransactionResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SkTransactionResults">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAuthorizedTradingPartners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ReceiverPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Standard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthorizedTradingPartnersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTradingPartnersListResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SkTradingPartnersListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="items" nillable="true" type="tns:SkTradingPartnersListItem" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkTradingPartnersListItem">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="receiverPartyIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="nationalIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="standards" nillable="true" type="tns:SkTradingPartnersListStandards" />
+      <xs:element minOccurs="1" maxOccurs="1" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkTradingPartnersListStandards">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="transactionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="standard" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceiverPartyExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ReceiverPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Standard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiverPartyExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTransactionExistsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SkTransactionExistsResult">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTradingPartners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ReceiverPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Standard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTradingPartnersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTradingPartnersListResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SenderPartyExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="SenderPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Standard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SenderPartyExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTransactionExistsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="SenderPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReceiverPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="MessageIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Standard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Payload" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTransactionResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="SenderPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReceiverPartyIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="MessageIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Standard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Payload" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkValidationResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SkValidationResults">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTransactionStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionUUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTransactionStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SkTransactionStatus">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="resultMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="TransactionUUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Authorization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AuthorizationKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="return" nillable="true" type="tns:SkTransactionResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

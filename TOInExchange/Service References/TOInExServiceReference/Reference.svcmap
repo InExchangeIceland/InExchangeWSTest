@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9a353c9c-e419-4f05-ab51-f6e95720f728" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InvoiceService.wsdl" MetadataType="Wsdl" ID="9b0050c5-a474-4f05-95ed-5241dc55484d" SourceId="1" SourceUrl="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc?wsdl" />
+    <MetadataFile FileName="InExchange.wsdl" MetadataType="Wsdl" ID="093c1465-b306-47a4-9102-5d1376f52ce8" SourceId="1" SourceUrl="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="InExchange.xsd" MetadataType="Schema" ID="5cc2597f-2327-4570-af8b-73bc90540068" SourceId="1" SourceUrl="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InExchange1.xsd" MetadataType="Schema" ID="7e3d07c8-7e00-47b6-9b38-0c0670797ca7" SourceId="1" SourceUrl="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InExchange2.xsd" MetadataType="Schema" ID="b0a0d7b6-474f-4569-8b31-caadec63429c" SourceId="1" SourceUrl="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InExchange.disco" MetadataType="Disco" ID="abbc51a1-f3b2-4ced-9244-abd7965ed256" SourceId="1" SourceUrl="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc?disco" />
+    <MetadataFile FileName="InExchange1.wsdl" MetadataType="Wsdl" ID="39c11075-ec94-4a33-b440-0fa442e28382" SourceId="1" SourceUrl="https://ws.inexchange.is/InvoiceService/InExchange.InvoiceService.InvoiceService.svc?wsdl=wsdl1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

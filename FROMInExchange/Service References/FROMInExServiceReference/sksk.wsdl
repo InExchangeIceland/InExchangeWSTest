@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://skhub.transactions/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://skhub.transactions/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema targetNamespace="http://skhub.transactions/">
+      <s:include schemaLocation="https://ws.inexchange.is/outgoinginvoices/sksk.asmx?schema=schema1" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PingSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapOut">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionList" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTransactionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTransactionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthorizedTradingPartnersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAuthorizedTradingPartners" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthorizedTradingPartnersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAuthorizedTradingPartnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiverPartyExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiverPartyExists" />
+  </wsdl:message>
+  <wsdl:message name="ReceiverPartyExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiverPartyExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTradingPartnersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTradingPartners" />
+  </wsdl:message>
+  <wsdl:message name="GetTradingPartnersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTradingPartnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SenderPartyExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:SenderPartyExists" />
+  </wsdl:message>
+  <wsdl:message name="SenderPartyExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:SenderPartyExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitTransaction" />
+  </wsdl:message>
+  <wsdl:message name="SubmitTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelTransaction" />
+  </wsdl:message>
+  <wsdl:message name="CancelTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelTransactionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSSkTransactionSoapHttp">
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingSoapIn" />
+      <wsdl:output message="tns:PingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionList">
+      <wsdl:input message="tns:GetTransactionListSoapIn" />
+      <wsdl:output message="tns:GetTransactionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <wsdl:input message="tns:GetTransactionSoapIn" />
+      <wsdl:output message="tns:GetTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatus">
+      <wsdl:input message="tns:UpdateTransactionStatusSoapIn" />
+      <wsdl:output message="tns:UpdateTransactionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorizedTradingPartners">
+      <wsdl:input message="tns:GetAuthorizedTradingPartnersSoapIn" />
+      <wsdl:output message="tns:GetAuthorizedTradingPartnersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiverPartyExists">
+      <wsdl:input message="tns:ReceiverPartyExistsSoapIn" />
+      <wsdl:output message="tns:ReceiverPartyExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTradingPartners">
+      <wsdl:input message="tns:GetTradingPartnersSoapIn" />
+      <wsdl:output message="tns:GetTradingPartnersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SenderPartyExists">
+      <wsdl:input message="tns:SenderPartyExistsSoapIn" />
+      <wsdl:output message="tns:SenderPartyExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitTransaction">
+      <wsdl:input message="tns:SubmitTransactionSoapIn" />
+      <wsdl:output message="tns:SubmitTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTransaction">
+      <wsdl:input message="tns:ValidateTransactionSoapIn" />
+      <wsdl:output message="tns:ValidateTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionStatus">
+      <wsdl:input message="tns:GetTransactionStatusSoapIn" />
+      <wsdl:output message="tns:GetTransactionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelTransaction">
+      <wsdl:input message="tns:CancelTransactionSoapIn" />
+      <wsdl:output message="tns:CancelTransactionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSkTransactionSoapHttp" type="tns:WSSkTransactionSoapHttp">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://www.InExchange.is/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionList">
+      <soap:operation soapAction="http://www.InExchange.is/GetTransactionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <soap:operation soapAction="http://www.InExchange.is/GetTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatus">
+      <soap:operation soapAction="http://www.InExchange.is/UpdateTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorizedTradingPartners">
+      <soap:operation soapAction="http://www.InExchange.is/GetAuthorizedTradingPartners" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiverPartyExists">
+      <soap:operation soapAction="http://www.InExchange.is/ReceiverPartyExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTradingPartners">
+      <soap:operation soapAction="http://www.InExchange.is/GetTradingPartners" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SenderPartyExists">
+      <soap:operation soapAction="http://www.InExchange.is/SenderPartyExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitTransaction">
+      <soap:operation soapAction="http://www.InExchange.is/SubmitTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTransaction">
+      <soap:operation soapAction="http://www.InExchange.is/ValidateTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionStatus">
+      <soap:operation soapAction="http://www.InExchange.is/GetTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTransaction">
+      <soap:operation soapAction="http://www.InExchange.is/CancelTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSkTransactionSoapHttp1" type="tns:WSSkTransactionSoapHttp">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://www.InExchange.is/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionList">
+      <soap12:operation soapAction="http://www.InExchange.is/GetTransactionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <soap12:operation soapAction="http://www.InExchange.is/GetTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatus">
+      <soap12:operation soapAction="http://www.InExchange.is/UpdateTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorizedTradingPartners">
+      <soap12:operation soapAction="http://www.InExchange.is/GetAuthorizedTradingPartners" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiverPartyExists">
+      <soap12:operation soapAction="http://www.InExchange.is/ReceiverPartyExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTradingPartners">
+      <soap12:operation soapAction="http://www.InExchange.is/GetTradingPartners" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SenderPartyExists">
+      <soap12:operation soapAction="http://www.InExchange.is/SenderPartyExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitTransaction">
+      <soap12:operation soapAction="http://www.InExchange.is/SubmitTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTransaction">
+      <soap12:operation soapAction="http://www.InExchange.is/ValidateTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionStatus">
+      <soap12:operation soapAction="http://www.InExchange.is/GetTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTransaction">
+      <soap12:operation soapAction="http://www.InExchange.is/CancelTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

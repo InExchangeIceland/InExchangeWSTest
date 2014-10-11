@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:i0="http://skhub.transactions/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.InExchange.is/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.InExchange.is/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://skhub.transactions/" location="https://ws.inexchange.is/outgoinginvoices/sksk.asmx?wsdl=wsdl1" />
+  <wsdl:types>
+    <s:schema targetNamespace="http://www.InExchange.is/">
+      <s:import schemaLocation="https://ws.inexchange.is/outgoinginvoices/sksk.asmx?schema=schema1" namespace="http://skhub.transactions/" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:service name="sksk">
+    <wsdl:port name="WSSkTransactionSoapHttp" binding="i0:WSSkTransactionSoapHttp">
+      <soap:address location="https://ws.inexchange.is/outgoinginvoices/sksk.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSkTransactionSoapHttp1" binding="i0:WSSkTransactionSoapHttp1">
+      <soap12:address location="https://ws.inexchange.is/outgoinginvoices/sksk.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
